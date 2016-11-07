@@ -1,0 +1,6 @@
+# number 1
+
+myVar = 3
+myVar2 = "blind mice"
+print(int(mVar) +str( myVar2))
+
