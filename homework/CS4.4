@@ -1,0 +1,21 @@
+import turtle
+ 
+def makeSquare(myTurtle, side):
+        myTurtle.color("blue")
+        myTurtle.forward(side)
+        myTurtle.color("purple")
+        myTurtle.forward(side)
+        myTurtle.right(90)
+        
+      
+
+squeak = turtle.Turtle()
+squeak.speed(100)
+squeak.color("orange")
+
+length = 200
+while length > 0:
+        makeSquare(squeak, length)
+
+        squeak.right(50)
+        length = length - 1 
