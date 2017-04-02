@@ -24,7 +24,7 @@ while tom2:
 	print("Do you want to start with a new team or open an existing team?")
 	print("What would you like to do? Enter your choice: ")
 	print("(1) Start with a new team")
-	print("(2) Open a file for an existing team")
+	print("(2) Print all players")
 	print("(3) Save your player list to a file")
 	print("(0) Leave the program (save first to avoid losing your data!)") 
  
@@ -57,10 +57,32 @@ while tom2:
 	elif choice == "3":
 		print("Where do you like to save your players? Enter a file name, we'll add the '.txt' for you.") 
 		user_file = raw_input()
-		filename = user_file + ".txt" 
+		saveTeam(players, user_file) 
 
 
 def saveTeam(playerList, filename):
-	filename = open(filename, "w")
-	filename.write(userPlayer)
-	filename.close() 
+	myFile = open(filename + ".txt", "w") 
+	for p in playersList:
+		myFile.write(playerName + " " 
+			+ str(playerAge) + " " 
+			+ str(playerGoals) + " " 
+			+ str(playerJersey) + " " 
+			+ playerPosition + "\n" 
+
+	myFile.close()
+	
+		
+def loadTeam(filename):
+	myList = [] 
+	the_file = open((filename), "r")
+	line = the_file.readline() 
+	while line:
+		player = line.split()
+		myList.append(Player(player[0],player[1],player[2],player[3],player[4]))
+		line = the_file.readline()
+
+
+	the_file.close() 
+
+	print(the_list)
+	return myList
